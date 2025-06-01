@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hamburgueria Z</string>
+    <string name="nomeDaLoja">Hamburgueria Z</string>
+    <string name="botaoPrimarioTexto">Fazer pedido</string>
+</resources>
