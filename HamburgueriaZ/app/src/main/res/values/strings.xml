@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Hamburgueria Z</string>
     <string name="nomeDaLoja">Hamburgueria Z</string>
-    <string name="botaoPrimarioTexto">Fazer pedido</string>
+    <string name="add_onion_rings">Adicionar Onion Rings por R$ 3,00</string>
+    <string name="add_queijo_extra">Adicionar Queijo extra por R$ 2,00</string>
+    <string name="add_bacon">Adicionar Bacon por R$ 2,00</string>
+    <string name="hint">Digite seu nome</string>
+    <string name="section_order">Faça seu pedido!</string>
+    <string name="label_quantidade">Quantidade</string>
+    <string name="btn_minus">-</string>
+    <string name="btn_plus">+</string>
+    <string name="btn_order">Fazer pedido</string>
 </resources>

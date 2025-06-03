@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tituloLoja"
+        android:id="@+id/text_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/image_logo"
         android:layout_width="match_parent"
         android:layout_height="144dp"
         android:layout_marginStart="24dp"
@@ -35,22 +35,27 @@
         app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tituloLoja"
+        app:layout_constraintTop_toBottomOf="@id/text_title"
         app:srcCompat="@drawable/hz_new" />
 
     <TextView
-        android:id="@+id/textoPedido"
+        android:id="@+id/text_section"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:text="Faça seu pedido!"
+        android:text="@string/section_order"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintTop_toBottomOf="@+id/image_logo" />
+
+
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputNome"
+        android:id="@+id/input_customer_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -58,19 +63,20 @@
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoPedido">
+        app:layout_constraintTop_toBottomOf="@+id/text_section">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nome"
+            style="?attr/textInputFilledStyle"
+            android:id="@+id/text_customer_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Digite seu nome"
+            android:hint="@string/hint"
             android:inputType="text|textCapWords" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="4dp"
@@ -78,22 +84,23 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputNome">
+        app:layout_constraintTop_toBottomOf="@+id/input_customer_name">
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/bacon"
-            style="@style/switchAdicionais"
-            android:text="Adicionar Bacon" />
+            android:id="@+id/switch_add_bacon"
+            style="@style/switchAdd"
+            android:text="@string/add_bacon" />
+
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/extraQueijo"
-            style="@style/switchAdicionais"
-            android:text="Adicionar Queijo extra" />
+            android:id="@+id/switch_add_cheese"
+            style="@style/switchAdd"
+            android:text="@string/add_queijo_extra" />
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/extraOnion"
-            style="@style/switchAdicionais"
-            android:text="Adicionar Onion Rings" />
+            android:id="@+id/switch_add_onion"
+            style="@style/switchAdd"
+            android:text="@string/add_onion_rings" />
 
     </LinearLayout>
 
@@ -111,11 +118,12 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <TextView
-            android:id="@+id/qtd"
+            android:id="@+id/text_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Quantidade" />
+            android:text="@string/label_quantidade"
+            android:textStyle="bold" />
 
         <Space
             android:layout_width="56dp"
@@ -123,40 +131,98 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/menos"
+            android:id="@+id/btn_minus"
             style="?attr/materialIconButtonFilledStyle"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:text="-" />
+            android:text="@string/btn_minus" />
 
         <TextView
-            android:id="@+id/numQtd"
-            android:layout_width="wrap_content"
+            android:id="@+id/num_quantity"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="1"
             android:textAlignment="center" />
 
         <Button
+            android:id="@+id/btn_plus"
             style="?attr/materialIconButtonFilledStyle"
-            android:id="@+id/mais"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:text="+"
-            />
+            android:text="@string/btn_plus" />
 
     </LinearLayout>
 
     <Button
 
-        android:id="@+id/fazerPedido"
+        android:id="@+id/btn_send_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:text="@string/botaoPrimarioTexto"
+        android:text="@string/btn_order"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2">
+
+        <TextView
+            android:id="@+id/textPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Preço total:"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textRS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="R$"
+            android:textAlignment="viewEnd"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/num_total"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="20,00"
+            android:textAlignment="viewEnd"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
